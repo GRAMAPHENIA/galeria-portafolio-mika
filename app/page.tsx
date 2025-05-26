@@ -91,7 +91,7 @@ export default function CyberpunkGallery() {
 
   return (
     <div className="relative h-screen max-w-xl mx-auto bg-black overflow-hidden">
-      {/* Background Image */}
+      {/* IMAGEN DE FONDO */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -100,35 +100,32 @@ export default function CyberpunkGallery() {
         }}
       />
 
-      {/* Gradient Overlays */}
+      {/* OVERLAY DE GRADIENTES */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60" />
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/20 via-transparent to-gray-800/20" />
 
-      {/* Cyberpunk Grid Pattern */}
+      {/* PATRON DE CUADROS */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="h-full w-full"
           style={{
-            backgroundImage: `
-  linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-`,
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
             backgroundSize: "20px 20px",
           }}
         />
       </div>
 
-      {/* Title - Vertical Left Side */}
+      {/* TITULO - LADO IZQUIERDO */}
       <div className="absolute top-1/2 transform z-10">
         <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 tracking-[0.3em] leading-[1.2] font-mono whitespace-nowrap -rotate-90 origin-center [text-shadow:0_0_30px_rgba(255,255,255,0.8),_0_0_60px_rgba(255,255,255,0.4)]">
           {currentPhoto.title}
         </h1>
       </div>
 
-      {/* Top Info Panel */}
+      {/* PANEL DE INFO */}
       <div className="absolute top-0 left-0 right-0 z-20 p-6">
         <div className="flex items-start justify-end">
-          {/* Author Info */}
+          {/* INFO DEL AUTOR */}
           <div className="flex items-center space-x-3 bg-black/40 backdrop-blur-md rounded-2xl p-3 border border-gray-500/30">
             <img
               src={currentPhoto.authorAvatar || "/placeholder.svg"}
@@ -160,7 +157,7 @@ export default function CyberpunkGallery() {
           </div>
         </div>
 
-        {/* Auction Info */}
+        {/* INFO DE LA SUBASTA */}
         <div className="mt-6 bg-gradient-to-r from-gray-900/60 to-gray-800/60 backdrop-blur-md rounded-2xl p-4 border border-gray-400/30">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -182,19 +179,13 @@ export default function CyberpunkGallery() {
               </span>
             </div>
           </div>
-          {/* <div className="mt-2 h-1 bg-gray-700 rounded-full overflow-hidden"> */}
-          {/* <div
-              className="h-full bg-gradient-to-r from-white to-gray-400 rounded-full animate-pulse"
-              style={{ width: "60%" }}
-            /> */}
-          {/* </div> */}
         </div>
       </div>
 
-      {/* Gaming Controls */}
+      {/* CONTROLES */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex items-center space-x-6">
-          {/* Previous Button */}
+          {/* BOTON ANTERIOR */}
           <button
             onClick={prevPhoto}
             className="group relative w-16 h-16 bg-gradient-to-r from-gray-900/60 to-gray-800/60 backdrop-blur-md rounded-full border border-gray-400/30 shadow-lg shadow-gray-400/30 hover:shadow-gray-300/50 transition-all duration-300 hover:scale-110"
@@ -203,9 +194,9 @@ export default function CyberpunkGallery() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-gray-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
-          {/* Center Controls */}
+          {/* CONTROLES CENTRALES */}
           <div className="flex space-x-4">
-            {/* Details Button */}
+            {/* BOTON DETALLES */}
             <button
               onClick={() => setShowDetails(!showDetails)}
               className="group relative w-12 h-12 bg-gradient-to-r from-gray-900/60 to-gray-800/60 backdrop-blur-md rounded-full border border-gray-400/30 shadow-lg shadow-gray-400/30 hover:shadow-gray-300/50 transition-all duration-300 hover:scale-110"
@@ -214,7 +205,7 @@ export default function CyberpunkGallery() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-gray-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
 
-            {/* Mini Gallery Button */}
+            {/* BOTON MINI GALERIA */}
             <button
               onClick={() => setShowMiniGallery(!showMiniGallery)}
               className="group relative w-12 h-12 bg-gradient-to-r from-gray-900/60 to-gray-800/60 backdrop-blur-md rounded-full border border-gray-400/30 shadow-lg shadow-gray-400/30 hover:shadow-gray-300/50 transition-all duration-300 hover:scale-110"
@@ -224,7 +215,7 @@ export default function CyberpunkGallery() {
             </button>
           </div>
 
-          {/* Next Button */}
+          {/* BOTON SIGUIENTE */}
           <button
             onClick={nextPhoto}
             className="group relative w-16 h-16 bg-gradient-to-r from-gray-900/60 to-gray-800/60 backdrop-blur-md rounded-full border border-gray-400/30 shadow-lg shadow-gray-400/30 hover:shadow-gray-300/50 transition-all duration-300 hover:scale-110"
@@ -235,7 +226,7 @@ export default function CyberpunkGallery() {
         </div>
       </div>
 
-      {/* Details Panel */}
+      {/* PANEL DE DETALLES */}
       {showDetails && (
         <div className="absolute bottom-32 left-4 right-4 z-30 bg-black/80 backdrop-blur-md rounded-2xl p-6 border border-gray-400/30 transform transition-all duration-500">
           <h3
@@ -267,7 +258,7 @@ export default function CyberpunkGallery() {
         </div>
       )}
 
-      {/* Mini Gallery */}
+      {/* MINI GALERIA */}
       {showMiniGallery && (
         <div className="absolute bottom-32 left-4 right-4 z-30 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-gray-400/30">
           <div className="flex space-x-3 overflow-x-auto pb-2">
@@ -295,7 +286,7 @@ export default function CyberpunkGallery() {
         </div>
       )}
 
-      {/* Progress Indicator */}
+      {/* INDICADOR DE PROGRESO */}
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
         <div className="flex flex-col space-y-2">
           {mockPhotos.map((_, index) => (
@@ -311,7 +302,7 @@ export default function CyberpunkGallery() {
         </div>
       </div>
 
-      {/* Ambient Glow Effects */}
+      {/* Efectos de iluminación */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse" />
       <div
         className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gray-400/15 rounded-full blur-3xl animate-pulse"
